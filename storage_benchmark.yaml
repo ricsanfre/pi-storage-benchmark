@@ -1,0 +1,53 @@
+---
+- hosts: server
+  become: true
+
+  tasks:
+
+    - name: Update apt repo and cache
+      apt:
+        update_cache: true
+        # Run the equivalent of apt-get update command on all servers
+        force_apt_get: true
+        # Do not use the aptitude command
+        # instead use the apt-get command on Debian/Ubuntu boxes
+        cache_valid_time: 3600
+        # Update the apt cache if its older than the cache_valid_time.
+        # This option is set in seconds
+
+    - name: Ensure packages needed for the testing are installed
+      apt:
+        name: "{{ packages }}"
+        update_cache: true
+        state: present
+      vars:
+        packages:
+          - lshw
+          - pciutils
+          - usbutils
+          - lsscsi
+          - bc
+          - curl
+          - hwinfo
+          - hdparm
+          - nvme-cli
+          - dmidecode
+          - smartmontools
+          - fio
+          - sdparm
+          - xxd
+          - libxml-dumper-perl
+          - iozone3
+
+    - name: Ensure libraspberrypi-bin package is installed
+      apt:
+        name: "{{ packages }}"
+        update_cache: true
+        state: present
+      vars:
+        packages:
+          - libraspberrypi-bin
+      when: ansible_architecture=='armh'
+
+    - name: Execute storage benchmarking script
+      script: benchmark_storage.sh > output_benchmark.txt
