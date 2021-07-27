@@ -47,7 +47,13 @@
       vars:
         packages:
           - libraspberrypi-bin
-      when: ansible_architecture=='armh'
+      when: ansible_distribution=='Ubuntu'
 
-    - name: Execute storage benchmarking script
-      script: benchmark_storage.sh > output_benchmark.txt
+    - name: Execute storage benchmarking script several times
+      script: "benchmark_storage.sh > output_benchmark_{{ item }}.txt"
+      with_items:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
