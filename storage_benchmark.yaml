@@ -57,3 +57,14 @@
         - '3'
         - '4'
         - '5'
+
+    - name: Fetch execution log files
+      fetch:
+        src: "output_benchmark_{{ item }}.txt"
+        dest: "./output"
+      with_items:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'

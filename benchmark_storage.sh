@@ -122,8 +122,8 @@ else
 fi
 Print_Style "Board information: Manufacturer: $HostManufacturer - Model: $HostModel - Architecture: $HostArchitecture - OS: $HostOS" "$YELLOW"
 
-# Install required components
-Print_Style "Fetching required components ..." "$YELLOW"
+# Checking required components
+Print_Style "Checking required components ..." "$YELLOW"
 
 
 # Check required packages
@@ -788,5 +788,6 @@ printf "%-25s %-25s %-25s\n" "IOZone" "4k random read" "$IO4kRandRead KB/s"
 printf "%-25s %-25s %-25s\n" "IOZone" "4k random write" "$IO4kRandWrite KB/s"
 printf "\n$BRIGHT$MAGENTA$UNDERLINE%-25s %-25s %-25s\n" " " "Score: $Score" " "
 
+Print_Style "End Test" "$NORMAL"
 # Return to home directory
 cd ~ || return
