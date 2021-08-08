@@ -4,12 +4,30 @@ The scope of this project is benchmarking the different storage options at my di
 Different options that will be tested are:
 
 1) Internal SDCard
-2) External USB 3.0 (no SSD)
-3) SCSI using a Target SCSI running on Raspberry PI using as USB 3.0 SSD disk
+2) Flash Disk USB 3.0 (no SSD)
+3) SSD Disk (+ USB 3.0 to SATA Adapter)
+4) SCSI using a Target SCSI running on Raspberry PI using as USB 3.0 SSD disk
 
 For the testing a tweaked version of the [script](https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh) provided by James A. Chambers (https://jamesachambers.com/) will be used
 
 > NOTE: see https://pibenchmarks.com/ for details about Raspberry PI storage benchmarking results
+
+## Testing automation with Ansible
+
+Benchmarking script execution is automated using an Ansible Playbook: `storage_benchmark.yaml`
+
+This playbook, first ensure that the required packages using during testing are installed, second execute the benchmarking script 5 times, and finally get the log output execution of all the tests.
+
+To execute the playbook:
+1) Update IP address of the tested hosts in inventory `hosts` file.
+2) Execute playbook:
+    
+    ansible-playbook -i hosts storage_benchmark.yaml
+3) Check the results in `output` directory
+
+
+
+
 
 ## Benchmarking Procedure
 
