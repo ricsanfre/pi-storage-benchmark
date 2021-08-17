@@ -3,9 +3,9 @@
 The scope of this project is benchmarking the different storage options at my disposal for running Ubuntu 20.04 on RaspberryPI
 Different options that will be tested are:
 
-1) Internal SDCard
-2) Flash Disk USB 3.0 (no SSD)
-3) SSD Disk (+ USB 3.0 to SATA Adapter)
+1) Internal SDCard: [SanDisk Ultra 32 GB microSDHC Memory Cards](https://www.amazon.es/SanDisk-SDSQUA4-064G-GN6MA-microSDXC-Adaptador-Rendimiento-dp-B08GY9NYRM/dp/B08GY9NYRM) (Class 10)
+2) Flash Disk USB 3.0: [Samsung USB 3.1 32 GB Fit Plus Flash Disk](https://www.amazon.es/Samsung-FIT-Plus-Memoria-MUF-32AB/dp/B07HPWKS3C)
+3) SSD Disk [Kingston A400 480GB](https://www.amazon.es/Kingston-SSD-A400-Disco-s%C3%B3lido/dp/B01N0TQPQB) + USB3 to SATA Adapter [Startech USB 3.0 to SATA III](https://www.amazon.es/Startech-USB3S2SAT3CB-Adaptador-3-0-2-5-negro) 
 4) SCSI using a Target SCSI running on Raspberry PI using as USB 3.0 SSD disk
 
 For the testing a tweaked version of the [script](https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh) provided by James A. Chambers (https://jamesachambers.com/) will be used
@@ -24,9 +24,6 @@ To execute the playbook:
     
     ansible-playbook -i hosts storage_benchmark.yaml
 3) Check the results in `output` directory
-
-
-
 
 
 ## Benchmarking Procedure
