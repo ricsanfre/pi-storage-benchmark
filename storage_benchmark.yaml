@@ -1,6 +1,9 @@
 ---
 - hosts: server
   become: true
+  
+  vars:   
+    test_partition: '/'
 
   tasks:
 
@@ -50,7 +53,7 @@
       when: ansible_distribution=='Ubuntu'
 
     - name: Execute storage benchmarking script several times
-      script: "benchmark_storage.sh > output_benchmark_{{ item }}.txt"
+      script: "benchmark_storage.sh {{ test_partition }} > output_benchmark_{{ item }}.txt"
       with_items:
         - '1'
         - '2'
