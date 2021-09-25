@@ -1,7 +1,7 @@
 # Benchmarking Storage options for Raspberry Pi
 
 The scope of this project is benchmarking the different storage options at my disposal for running Ubuntu 20.04 on RaspberryPI
-Different options that will be tested are:
+Different options that have been tested are:
 
 1) Internal SDCard: [SanDisk Ultra 32 GB microSDHC Memory Cards](https://www.amazon.es/SanDisk-SDSQUA4-064G-GN6MA-microSDXC-Adaptador-Rendimiento-dp-B08GY9NYRM/dp/B08GY9NYRM) (Class 10)
 2) Flash Disk USB 3.0: [Samsung USB 3.1 32 GB Fit Plus Flash Disk](https://www.amazon.es/Samsung-FIT-Plus-Memoria-MUF-32AB/dp/B07HPWKS3C)
@@ -11,6 +11,9 @@ Different options that will be tested are:
 For the testing a tweaked version of the [script](https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh) provided by James A. Chambers (https://jamesachambers.com/) will be used
 
 > NOTE: see https://pibenchmarks.com/ for details about Raspberry PI storage benchmarking results
+
+See benchmarking results [here](./result/benchmarking_result.md).
+
 
 ## Testing automation with Ansible
 
